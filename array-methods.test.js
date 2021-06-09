@@ -51,9 +51,31 @@ describe('filter', () => {
 });
 
 describe('find index', () => {
-  it('takes an array and returns the index of the first item whose callback returns true.', () => {
+  it('takes an array of numbers and returns the index of the first item who is divisble by 2.', () => {
     const actual = findIndex(arrayOne, evenNumbers);
     const expected = 2;
+    expect(actual).toEqual(expected);
+  });
+
+  it('takes an array of numbers and strings and returns the index of the first item who is divisible by 2.', () => {
+    const mixedArray = [1,, 'two', 3, 4];
+    const actual = findIndex(mixedArray, evenNumbers);
+    const expected = 4;
+    expect(actual).toEqual(expected);
+  });
+
+  it('takes an array of numbers and strings and returns -1 if no item is divisible by 2', () => {
+    const mixedArray = [1,, 'two', 3, 'four'];
+    const actual = findIndex(mixedArray, evenNumbers);
+    const expected = -1;
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('reduce', () => {
+  it('does something', () => {
+    const actual = reduce(arrayOne, (accumulator, item) => accumulator += item);
+    const expected = 15;
     expect(actual).toEqual(expected);
   });
 });
