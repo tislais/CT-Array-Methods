@@ -36,3 +36,10 @@ export function reduce(arr, callback) {
   }
   return acc;
 }
+
+export function every(arr, callback) {
+  for(const item of arr) {
+    if(item && !callback(item)) return false;
+  }
+  return true;
+}

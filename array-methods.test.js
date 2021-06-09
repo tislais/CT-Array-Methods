@@ -1,5 +1,5 @@
 /* eslint-disable no-sparse-arrays */
-import { map, filter, findIndex, reduce } from './array-methods.js';
+import { map, filter, findIndex, reduce, every } from './array-methods.js';
 
 
 function multiplyByThree(number) {
