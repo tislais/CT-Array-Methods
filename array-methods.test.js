@@ -51,9 +51,9 @@ describe('filter', () => {
 });
 
 describe('find index', () => {
-  it('Takes an array and returns the index of the first item whose callback returns true or a truthy value.', () => {
+  it('takes an array and returns the index of the first item whose callback returns true.', () => {
     const actual = findIndex(arrayOne, evenNumbers);
-    const expected = 'boop';
+    const expected = 2;
     expect(actual).toEqual(expected);
   });
 });
