@@ -1,3 +1,4 @@
+/* eslint-disable no-sparse-arrays */
 import { map } from './array-methods.js';
 
 
@@ -18,9 +19,9 @@ describe('map', () => {
   });
   
   it('takes a string and adds beans', () => {
-    const input = ['one', 'two', 'red', 'blue'];
+    const input = ['one', 'two',, 'red', 'blue'];
     const actual = map(input, addBeans);
-    const expected = ['one beans', 'two beans', 'red beans', 'blue beans'];
+    const expected = ['one beans', 'two beans',, 'red beans', 'blue beans'];
     expect(actual).toEqual(expected);
   });
 });
