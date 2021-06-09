@@ -28,3 +28,11 @@ export function findIndex(arr, callback) {
   }
   return -1;
 }
+
+export function reduce(arr, callback) {
+  let acc = arr[0];
+  for(const item of arr.slice(1)) {
+    if(item) acc = callback(acc, item);
+  }
+  return acc;
+}
