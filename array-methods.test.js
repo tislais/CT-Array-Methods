@@ -11,9 +11,7 @@ function addBeans(string) {
 }
 
 function evenNumbers(number) {
-  if(number % 2 === 0) {
-    return true;
-  }
+  return number % 2 === 0;
 }
 
 const arrayOne = [1, 2,, 3, 4, 5];
