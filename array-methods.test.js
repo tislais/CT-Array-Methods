@@ -73,9 +73,17 @@ describe('find index', () => {
 });
 
 describe('reduce', () => {
-  it('does something', () => {
+  it('adds all numbers of an array together', () => {
     const actual = reduce(arrayOne, (accumulator, item) => accumulator += item);
     const expected = 15;
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('every', () => {
+  it('should return true if all items of an array are greater than zero', () => {
+    const actual = every(arrayOne, num => num > 0);
+    const expected = true;
     expect(actual).toEqual(expected);
   });
 });
