@@ -11,17 +11,17 @@ function addBeans(string) {
 }
 
 function evenNumbers(number) {
-  if(number / 2 % 0) {
+  if(number % 2 === 0) {
     return true;
   }
 }
 
-const arrayOne = [1, 2, 3, 4, 5];
+const arrayOne = [1, 2,, 3, 4, 5];
 
 describe('map', () => {
   it('multiplies each item of array by 3', () => {
     const actual = map(arrayOne, multiplyByThree);
-    const expected = [3, 6, 9, 12, 15];
+    const expected = [3, 6,, 9, 12, 15];
     expect(actual).toEqual(expected);
   });
   
