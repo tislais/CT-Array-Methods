@@ -1,5 +1,5 @@
 /* eslint-disable no-sparse-arrays */
-import { map, filter } from './array-methods.js';
+import { map, filter, findIndex } from './array-methods.js';
 
 
 function multiplyByThree(number) {
@@ -18,12 +18,12 @@ function evenNumbers(number) {
   return number % 2 === 0;
 }
 
-const arrayOne = [1, 2,, 3, 4, 5];
+const arrayOne = [1,, 2, 3, 4, 5];
 
 describe('map', () => {
   it('multiplies each item of array by 3', () => {
     const actual = map(arrayOne, multiplyByThree);
-    const expected = [3, 6,, 9, 12, 15];
+    const expected = [3,, 6, 9, 12, 15];
     expect(actual).toEqual(expected);
   });
   
@@ -46,6 +46,14 @@ describe('filter', () => {
     const beanArray = ['brains', 'beans', 'beans',, 'brains', 'braiiiinssss', 'beans'];
     const actual = filter(beanArray, removeBeans);
     const expected = ['brains', 'brains', 'braiiiinssss'];
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('find index', () => {
+  it('Takes an array and returns the index of the first item whose callback returns true or a truthy value.', () => {
+    const actual = findIndex(arrayOne, evenNumbers);
+    const expected = 'boop';
     expect(actual).toEqual(expected);
   });
 });
