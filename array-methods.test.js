@@ -10,6 +10,10 @@ function addBeans(string) {
   return `${string} beans`;
 }
 
+function removeBeans(string) {
+  return string != 'beans';
+}
+
 function evenNumbers(number) {
   return number % 2 === 0;
 }
@@ -35,6 +39,13 @@ describe('filter', () => {
   it('creates an array of only even numbers', () => {
     const actual = filter(arrayOne, evenNumbers);
     const expected = [2, 4];
+    expect(actual).toEqual(expected);
+  });
+  
+  it('creates an array of strings that arent beans', () => {
+    const beanArray = ['brains', 'beans', 'beans',, 'brains', 'braiiiinssss', 'beans'];
+    const actual = filter(beanArray, removeBeans);
+    const expected = ['brains', 'brains', 'braiiiinssss'];
     expect(actual).toEqual(expected);
   });
 });
